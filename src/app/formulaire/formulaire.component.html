@@ -8,38 +8,38 @@
           <h4 class="card-title">Create your portfolio</h4>
         </div>
         <div class="card-body">
-          <form id="contact-form" method="POST" action="contact.php" role="form">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
             <div class="row">
               <div class="col-md-6">
                 <label for="firstname">Prénom <span class="blue">*</span></label>
-                <input id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom" value="" required>
+                <input ngModel id="firstname" type="text" name="firstname" class="form-control" placeholder="Votre prénom" value="" required>
                 <p class="comments"></p>
               </div>
               <div class="col-md-6">
                 <label for="name">Nom <span class="blue">*</span></label>
-                <input id="name" type="text" name="name" class="form-control" placeholder="Votre nom" value="" required>
+                <input ngModel id="name" type="text" name="name" class="form-control" placeholder="Votre nom" value="" required>
                 <p class="comments"></p>
               </div>
               <div class="col-md-6">
                 <label for="email">Email <span class="blue">*</span></label>
-                <input id="email" type="email" name="email" class="form-control" placeholder="Votre email" value="" required>
+                <input ngModel id="email" type="email" name="email" class="form-control" placeholder="Votre email" value="" required>
                 <p class="comments"></p>
               </div>
               <div class="col-md-6">
                 <label for="phone">Téléphone</label>
-                <input id="phone" type="tel" name="phone" class="form-control" placeholder="Votre téléphone" value="">
+                <input ngModel id="phone" type="tel" name="phone" class="form-control" placeholder="Votre téléphone" value="">
                 <p class="comments"></p>
               </div>
               <!-- adress  -->
               <div class="col-md-12">
                 <label for="adress">Adresse</label>
-                <input id="adress" type="text" name="adress" class="form-control" placeholder="Votre adresse" value="">
+                <input ngModel id="adress" type="text" name="adress" class="form-control" placeholder="Votre adresse" value="">
                 <p class="comments"></p>
               </div>
               <!-- image  -->
               <div class="col-md-12">
                 <label for="image">Image</label>
-                <input id="image" type="file" name="image" class="form-control" placeholder="Votre image" value="">
+                <input ngModel id="image" type="file" name="image" class="form-control" placeholder="Votre image" value="">
                 <p class="comments"></p>
               </div>
              <!-- experience -->
@@ -173,8 +173,15 @@
               <div class="col-md-12">
                 <p class="blue"><strong>* Ces informations sont requises.</strong></p>
               </div>
+
+              <div>
+                {{f.value | json}}
+              </div>
+
+
+
               <div class="col-md-12">
-                <button class="btnbtn-outline-primary"  > Generate</button>
+                <button type="submit" class="btnbtn-outline-primary"  > Generate</button>
               </div>
             </div>
           </form>

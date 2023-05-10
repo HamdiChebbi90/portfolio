@@ -17,6 +17,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './cv/form/form.component';
+import { AfficheComponent } from './cv/affiche/affiche.component';
+import { CvComponent } from './cv/cv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     FormulaireComponent,
     NotFoundComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FormComponent,
+    AfficheComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,

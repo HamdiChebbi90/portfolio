@@ -14,6 +14,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { CvComponent } from './cv/cv.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'skills', component: SkillsComponent},
   { path: 'formulaire', component: FormulaireComponent },
   { path:'projects', component:ProjectsComponent},
-
+  { path:'cv', component:CvComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'experience', component:ExperienceComponent },
