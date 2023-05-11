@@ -37,7 +37,7 @@ import { CvComponent } from './cv/cv.component';
     ProjectsComponent,
     FormComponent,
     AfficheComponent,
-    CvComponent
+    CvComponent,
   ],
   imports: [
     BrowserModule,

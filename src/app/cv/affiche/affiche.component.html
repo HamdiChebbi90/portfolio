@@ -1,12 +1,45 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="#" alt="Card image cap">
+<button class="btn btn-primary" (click)="download()">Download</button>
+
+
+<div class="card">
+  <img src="#" alt="" class="card-img-top">
+
   <div class="card-body">
-    <h1> {{personne[0]?._id }}</h1>
     <h5 class="card-title">{{personne[0]?.firstname  }}  </h5>
     <p class="card-text">{{personne[0]?.lastname  }}</p>
+    <p class="card-text">{{personne[0]?.email  }}</p>
+    <p class="card-text">{{personne[0]?.phone  }}</p>
+    <p class="card-text">{{personne[0]?.adress  }}</p>
+    <div *ngFor="let experience of personne[0]?.experience ;let index = index; let isLast = last; let isOdd = odd;" >
+      <ul>
+        <li>{{experience?.title}}</li>
+        <li>{{experience.place}}</li>
+        <li>{{experience.startDate | date: 'dd/MM/yyyy'}}----{{experience.endDate | date: 'dd/MM/yyyy'}}
+        </li>
+        <li>{{experience.description}}</li>
+        <hr *ngIf="!isLast">
+      </ul>
+    </div>
+    <!-- <p class="card-text">{{personne[0].experience[0]?.title}}</p> -->
+    <button class="btn btn-primary" (click)="testihab()">ihab</button>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   </div>
+
+
 </div>
+
 

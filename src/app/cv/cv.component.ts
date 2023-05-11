@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Formulaire } from '../models/formulaire';
 import { FormService } from '../form.service';
+import { Experience } from '../models/experince';
 
 @Component({
   selector: 'app-cv',
@@ -9,10 +10,14 @@ import { FormService } from '../form.service';
 })
 export class CvComponent {
 
-@Output()
 
 personne: Formulaire[]=[];
 selctdataform: Formulaire []=[];
+experience: Experience = {
+  title: '',  place: '', startDate: new Date(), endDate: new Date(), description: ''
+
+  };
+
 
 
 constructor(private formServ:FormService) { }

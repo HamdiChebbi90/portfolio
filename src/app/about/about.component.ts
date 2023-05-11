@@ -17,21 +17,6 @@ export class AboutComponent {
 
   ngOnInit() {
     Aos.init();
-
     this.tabForm=this.formServ.getFormulaire();
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }

@@ -8,6 +8,10 @@ import * as Aos from 'aos';
 })
 export class EducationComponent {
 
+
+
+
+
   ngOnInit() {
   Aos.init();
 

@@ -4,7 +4,7 @@ import { Formulaire } from './models/formulaire';
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class  FormService {
 
 private tab : Formulaire[] =[];
 
@@ -22,12 +22,6 @@ private tab : Formulaire[] =[];
     console.log(this.tab);
   }
 
-  deleteFormulaire(personne: Formulaire) {
-    const index = this.tab.indexOf(personne);
-    this.tab.splice(index, 1);
-  }
-
-
   getFormulaire() {
     return this.tab;
   }
@@ -35,13 +29,5 @@ private tab : Formulaire[] =[];
   getafteradd(): Formulaire {
     return this.tab[this.tab.length - 1];
   }
-
-
-
-
-
-
-
-
 
 }
