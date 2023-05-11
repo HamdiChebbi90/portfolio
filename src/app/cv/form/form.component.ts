@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormService } from 'src/app/form.service';
 import { Experience } from 'src/app/models/experince';
 import { Formulaire } from 'src/app/models/formulaire';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +21,8 @@ export class FormComponent {
 
 
   constructor(
-    private formServ: FormService
+    private formServ: FormService,
+    private router: Router
     ) {
 
     }
@@ -54,6 +56,10 @@ export class FormComponent {
   deleteExperience(index: number) {
     this.experiences.splice(index, 1);
   }
+  serv()
+  {
+
+this.router.navigate(['/experience']);    }
 
 
 

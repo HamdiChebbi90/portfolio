@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Aos from 'aos';
+import { Experience } from '../models/experince';
+import { FormService } from '../form.service';
+import { Formulaire } from '../models/formulaire';
 
 @Component({
   selector: 'app-experience',
@@ -8,9 +11,23 @@ import * as Aos from 'aos';
 })
 export class ExperienceComponent {
 
+  @Input() personne: Formulaire[] = [];
+
+  experiences: Experience[] = [];
+
+  constructor(
+    private formServ: FormService
+  ) { }
+
 
   ngOnInit() {
-  Aos.init();
+
+    console.log(this.personne);
+
   }
+
+
+
+
 
 }

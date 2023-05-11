@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './cv/form/form.component';
 import { AfficheComponent } from './cv/affiche/affiche.component';
 import { CvComponent } from './cv/cv.component';
+import { FormService } from './form.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,7 @@ import { CvComponent } from './cv/cv.component';
 
 
   ],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

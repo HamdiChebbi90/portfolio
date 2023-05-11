@@ -12,7 +12,6 @@ export class CvComponent {
 
 
 personne: Formulaire[]=[];
-selctdataform: Formulaire []=[];
 experience: Experience = {
   title: '',  place: '', startDate: new Date(), endDate: new Date(), description: ''
 

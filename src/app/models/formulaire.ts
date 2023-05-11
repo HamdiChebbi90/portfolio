@@ -1,3 +1,4 @@
+import { Education } from "./cv";
 import { Experience } from "./experince";
 
 export class Formulaire {
@@ -19,6 +20,9 @@ export class Formulaire {
     public path: string,
     public description: string,
     public experience: Experience[],
+    public education: Education[],
+    
+    public objectif: string,
 
   )
   {}
