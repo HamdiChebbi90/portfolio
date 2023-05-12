@@ -1,7 +1,12 @@
-import { Education } from "./cv";
+import { Education } from "./education";
 import { Experience } from "./experince";
-
+import { Project } from "./project";
+import { Skill } from "./skill";
 export class Formulaire {
+  reset() {
+    throw new Error('Method not implemented.');
+  }
+  value: any;
   constructor(
     public _id: number,
     public firstname: string,
@@ -21,9 +26,12 @@ export class Formulaire {
     public description: string,
     public experience: Experience[],
     public education: Education[],
-    
+    public skill: Skill[],
+    public project: Project[],
+
     public objectif: string,
 
   )
   {}
 }
+

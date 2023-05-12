@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Formulaire } from '../models/formulaire';
+import { FormPortService } from '../form-port.service';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-skills',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
+
+
+
+  @Input() personne: Formulaire[] = [];
+
+  constructor(
+    private formPort: FormPortService
+  ) { }
+
+  ngOnInit() {
+    Aos.init();
+    }
+
 
 }

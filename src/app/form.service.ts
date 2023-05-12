@@ -26,8 +26,8 @@ private tab : Formulaire[] =[];
     return this.tab;
   }
 
-  getafteradd(): Formulaire {
-    return this.tab[this.tab.length - 1];
-  }
+  // getafteradd(): Formulaire {
+  //   return this.tab[this.tab.length - 1];
+  // }
 
 }

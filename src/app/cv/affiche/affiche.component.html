@@ -1,28 +1,6 @@
-<!-- <button class="btn btn-primary" (click)="download()">Download</button>
 
 
-<div class="card">
-  <img src="#" alt="" class="card-img-top">
-
-  <div class="card-body">
-    <h5 class="card-title">{{personne[0]?.firstname  }}  </h5>
-    <p class="card-text">{{personne[0]?.lastname  }}</p>
-    <p class="card-text">{{personne[0]?.email  }}</p>
-    <p class="card-text">{{personne[0]?.phone  }}</p>
-    <p class="card-text">{{personne[0]?.adress  }}</p>
-    <div *ngFor="let experience of personne[0]?.experience ;let index = index; let isLast = last; let isOdd = odd;" >
-      <ul>
-        <li>{{experience?.title}}</li>
-        <li>{{experience.place}}</li>
-        <li>{{experience.startDate | date: 'dd/MM/yyyy'}}----{{experience.endDate | date: 'dd/MM/yyyy'}}
-        </li>
-        <li>{{experience.description}}</li>
-        <hr *ngIf="!isLast">
-      </ul>
-    </div> -->
-    <!-- <p class="card-text">{{personne[0].experience[0]?.title}}</p> -->
-
-    <div class="card" id="page">
+    <div class="card" id="page" #dataToExport>
       <div class="photo-and-name">
           <img src="profile.png" class="photo" alt="Profile Picture">
           <div class="contact-info-box  "  >
@@ -46,31 +24,26 @@
           <p>
             {{personne[0]?.objectif  }}          </p>
       </div>
+
+
+      education
       <div id="education">
           <h3>Education</h3>
-          <table>
-              <tr class="school-1">
-                  <td rowspan="2">2002 - 2015</td>
-                  <td><b>School-1</b>: ABC School (Standard KG-VIII)</td>
-              </tr>
-              <tr class="school-2">
-                  <td><b>School-2</b>: XYZ School (Standard IX-X)</td>
-              </tr>
-
-              <tr class="school-1">
-                  <td rowspan="2">2012 - 2014</td>
-                  <td><b>ACCESS</b>: English Micro Scholarship Program by US Consolate</td>
-              </tr>
-              <tr class="school-2">
-                  <td><b>The Professional's Academy</b>: Web Designing (HTML, CSS, JS, Bootstrap)</td>
-              </tr>
-
+          <table   *ngFor="let education of personne[0]?.education">
               <tr>
-                  <td style="width: 120px; color: gray;">2015 - 2017</td>
-                  <td><b>Intermediate</b>: Board of Intermediate Karachi - Private</td>
+                  <td>{{education.startDate | date: 'dd/MM/yyyy'}} >>> {{education.endDate | date: 'dd/MM/yyyy'}}</td>
+                  <td><b>{{education?.title}}</b></td>
+                  <td><b>{{education.university}}</b></td>
+                  <td><b>{{education.departement}}</b></td>
+                  <td> <b> {{education.mention}} </b>
+                  </td>
               </tr>
+
           </table>
       </div>
+
+
+
 
 
 
@@ -91,40 +64,29 @@
 
       </div>
 
+      <div id="work">
+        <h3>Projects</h3>
+        <table *ngFor="let project of personne[0]?.project">
+          <tr class="work-1">
+            <td rowspan="2" > {{project?.title}}</td>
+              <td mr-1 >{{project.date | date: 'dd/MM/yyyy'}}</td>
+              <br>
+              <td ><b>{{project.description}}</b> : {{project.link}}</td>
+          </tr>
 
 
+        </table>
 
+      </div>
 
-
-      <div id="bio-data">
-          <h3>Bio-Data</h3>
-          <table>
+      <div id="skills">
+          <h3>Skills</h3>
+          <table *ngFor="let skill of personne[0]?.skill">
               <tr>
-                  <td>F'Name:</td>
-                  <td><b>Naseem Akhter</b></td>
-              </tr>
-              <tr>
-                  <td>Date of Birth:</td>
-                  <td><b>25<sup>th</sup> November 1996</b></td>
-              </tr>
-              <tr>
-                  <td>CNIC:</td>
-                  <td><b>42401-XXXXXXX-7</b></td>
-              </tr>
-              <tr>
-                  <td>Religion:</td>
-                  <td><b>Islam</b></td>
-              </tr>
-              <tr>
-                  <td>Nationality:</td>
-                  <td><b>Pakistani</b></td>
-              </tr>
-              <tr>
-                  <td>Marital Status:</td>
-                  <td><b>Unmarried</b></td>
+                  <td>{{skill?.name}}</td>
+                  <td>{{skill?.level}}</td>
               </tr>
           </table>
-      </div>
   </div>
 
 <button class="btn btn-primary" (click)="download()">Download</button>

@@ -51,6 +51,7 @@
 
               <!-- experience -->
               <div class="col-md-12 my-2 border rounded py-3">
+                <h3> Experience </h3>
                 <div *ngFor="let experience of experiences ;let index = index; let isLast = last; let isOdd = odd;" >
                   <ul >
                     <li>{{experience?.title}}</li>
@@ -78,21 +79,110 @@
                   <label for="description">Description</label>
                   <textarea [(ngModel)]="experienceForm.description" id="description" name="description"
                     class="form-control" placeholder="Votre description" rows="4"></textarea>
-                  <button type="button" (click)="this.addExperience()" class="btn  my-1 btn-primary btn-sm text-end">Add</button>
+                  <button type="button" (click)="this.addExperience()" class="btn  my-1 btn-primary btn-sm text-end pull-right">Add</button>
                 </div>
 
 
 
               </div>
 
+              <!-- education -->
 
-              <!-- description -->
-              <div class="col-md-12 my-2">
-                <label for="description">Description</label>
-                <textarea ngModel id="description" name="description" class="form-control"
-                  placeholder="Votre description" rows="4"></textarea>
+              <div class="col-md-12 my-2 border rounded py-3">
+                <h3> Education </h3>
+                <div *ngFor="let education of educations ;let index = index; let isLast = last; let isOdd = odd;" >
+                  <ul >
+                    <li>{{education?.title}}</li>
+                    <li>{{education.startDate | date: 'dd/MM/yyyy'}}----{{education.endDate | date: 'dd/MM/yyyy'}}
+                    </li>
+                    <li>{{education.university}}</li>
+                    <li>{{education.departement}}</li>
+                    <li>{{education.mention}}</li>
+
+                    <button type="button" (click)="deleteEducation(index)" class="btn  my-1 btn-danger btn-sm text-end">Delete</button>
+                    <hr *ngIf="!isLast">
+                  </ul>
+                </div>
+                <div class="col-md-12 my-2 border rounded py-3">
+                  <label for="title">title</label>
+                  <input [(ngModel)]="educationForm.title" id="title" type="text" name="title" class="form-control"
+                    placeholder="Votre title" value="">
+                  <label for="place">university</label>
+                  <input [(ngModel)]="educationForm.university" id="place" type="text" name="place" class="form-control"
+                    placeholder="Votre place" value="">
+                  <label for="place">departement</label>
+                  <input [(ngModel)]="educationForm.departement" id="place" type="text" name="place" class="form-control"
+                    placeholder="Votre place" value="">
+
+
+                    <label for="startDate">Start Date</label>
+                    <input [(ngModel)]="educationForm.startDate" id="startDate" type="date" name="startDate"
+                    class="form-control" placeholder="Votre startDate" value="">
+                    <label for="endDate">End Date</label>
+                    <input [(ngModel)]="educationForm.endDate" id="endDate" type="date" name="endDate"
+                    class="form-control" placeholder="Votre endDate" value="">
+                    <label for="place">mention</label>
+                    <input [(ngModel)]="educationForm.mention" id="place" type="text" name="place" class="form-control"
+                      placeholder="Votre place" value="">
+
+
+                </div>
+                  <button type="button" (click)="this.addEducation()" class="btn  my-1 btn-primary btn-sm text-end pull-right">Add</button>
+                </div>
+              </div>
+
+              <!-- skills -->
+              <div class="col-md-12 my-2 border rounded py-3">
+                <h3> Skills </h3>
+                <div *ngFor="let skill of skills ;let index = index; let isLast = last; let isOdd = odd;" >
+                  <ul >
+                    <li>{{skill?.name}}</li>
+                    <li>{{skill?.level}}</li>
+                    <button type="button" (click)="deleteSkill(index)" class="btn  my-1 btn-danger btn-sm text-end">Delete</button>
+                    <hr *ngIf="!isLast">
+                  </ul>
+                </div>
+                <div class="col-md-12 my-2 border rounded py-3">
+                  <label for="title">title</label>
+                  <input [(ngModel)]="skillForm.name" id="title" type="text" name="title" class="form-control"
+                    placeholder="Votre title" value="">
+                  <label for="place">level</label>
+                  <input [(ngModel)]="skillForm.level" id="place" type="text" name="place" class="form-control"
+                    placeholder="Votre place" value="">
+                </div>
+
+
+                <button type="button" (click)="this.addSkill()" class="btn  my-1 btn-primary btn-sm text-end pull-right">Add</button>
 
               </div>
+
+              <!-- projects -->
+
+              <div class="col-md-12 my-2 border rounded py-3">
+                <h3> Projects </h3>
+                <div *ngFor="let project of projects ;let index = index; let isLast = last; let isOdd = odd;" >
+                  <ul >
+                    <li>{{project?.title}}</li>
+                    <li>{{project?.description}}</li>
+                    <li>  {{project?.date}}  </li>
+                    <li>{{project?.link}}</li>
+                    <button type="button" (click)="deleteProject(index)" class="btn  my-1 btn-danger btn-sm text-end">Delete</button>
+                    <hr *ngIf="!isLast">
+                  </ul>
+                </div>
+                <div class="col-md-12 my-2 border rounded py-3">
+                  <label for="title">title</label>
+                  <input [(ngModel)]="projectForm.title" id="title" type="text" name="title" class="form-control"
+                    placeholder="Votre title" value="">
+                  <label for="place">description</label>
+                  <input [(ngModel)]="projectForm.description" id="place" type="text" name="place" class="form-control"
+                    placeholder="Votre place" value="">
+                  <label for="place">link</label>
+                  <input [(ngModel)]="projectForm.link" id="place" type="text" name="place" class="form-control"
+                    placeholder="Votre place" value="">
+                </div>
+
+
               <!-- bouton submit -->
               <div class="col-md-12 my-2">
                 <button type="submit" (click)="onSubmit(f)" class="btn btn-primary pull-right" id="btnContactUs">
@@ -105,8 +195,9 @@
         </div>
       </div>
 
+
     </form>
 
-    <button type="button" (click)="serv()" class="btn btn-primary">taketo exper</button>
+
   </div>
 </div>

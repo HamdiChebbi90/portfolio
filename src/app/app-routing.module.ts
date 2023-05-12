@@ -15,9 +15,11 @@ import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CvComponent } from './cv/cv.component';
+import { AccComponent } from './acc/acc.component';
 
 
 const routes: Routes = [
+  { path: '', component: AccComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'skills', component: SkillsComponent},

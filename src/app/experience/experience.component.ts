@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import * as Aos from 'aos';
 import { Experience } from '../models/experince';
-import { FormService } from '../form.service';
 import { Formulaire } from '../models/formulaire';
+import { FormPortService } from '../form-port.service';
 
 @Component({
   selector: 'app-experience',
@@ -13,10 +13,8 @@ export class ExperienceComponent {
 
   @Input() personne: Formulaire[] = [];
 
-  experiences: Experience[] = [];
-
   constructor(
-    private formServ: FormService
+    private formPort: FormPortService
   ) { }
 
 

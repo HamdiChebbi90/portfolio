@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Formulaire } from '../models/formulaire';
 import { Experience } from '../models/experince';
-import { FormService } from '../form.service';
+import { FormPortService } from '../form-port.service';
+import { Skill } from '../models/skill';
+import { Education } from '../models/education';
+import { Project } from '../models/project';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +19,36 @@ experience: Experience = {
   title: '',  place: '', startDate: new Date(), endDate: new Date(), description: ''
 
   };
+
+  education: Education = {
+    title: '',
+    startDate: new Date(),
+    endDate: new Date(),
+    university: '',
+    departement: '',
+    mention: '',
+    };
+
+    skill: Skill = {
+      name: '',
+      level: 0,
+      };
+
+      project: Project = {
+        title: '',
+        description: '',
+        date: new Date(),
+        link: '',
+        };
+
   constructor(
-    private formServ:FormService  ) { }
+    private formPort:FormPortService ) { }
 
   ngOnInit() {
 
-    this.personne=this.formServ.getFormulaire();
-    console.log(this.formServ.getFormulaire());
+    this.personne=this.formPort.getFormulaire();
+    console.log(this.formPort.getFormulaire());
+
   }
 
 

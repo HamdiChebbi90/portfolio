@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Aos from 'aos';
 import { FormService } from '../form.service';
 import { Formulaire } from '../models/formulaire';
+import { FormPortService } from '../form-port.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,14 +10,14 @@ import { Formulaire } from '../models/formulaire';
 })
 export class AboutComponent {
 
-  tabForm:Formulaire[]=[];
+
+  @Input() personne: Formulaire[] = [];
 
 
-  constructor( private formServ:FormService) { }
+  constructor( private formPort:FormPortService) { }
 
 
   ngOnInit() {
     Aos.init();
-    this.tabForm=this.formServ.getFormulaire();
     }
 }

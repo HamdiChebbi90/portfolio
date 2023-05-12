@@ -15,6 +15,11 @@ export class HeaderComponent {
     this.navbarOpen = !this.navbarOpen;
   }
 
+  constructor() { }
+
+  logout() {
+    localStorage.removeItem('user');
+  }
 
 
 

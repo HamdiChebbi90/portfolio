@@ -2,61 +2,27 @@
   <div class="container cc-education">
       <div class="h4 text-center mb-4 title">Education</div>
           <div class="card">
-              <div class="row">
+              <div class="row" *ngFor="let education of personne[0]?.education">
                   <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                       <div class="card-body cc-education-header">
-                          <p>2010-2011</p>
+                          <p>{{education.startDate | date: 'dd/MM/yyyy'}} >>> {{education.endDate | date: 'dd/MM/yyyy'}}</p>
                       <div class="h5">Bachelor Degree</div>
                       </div>
                   </div>
                   <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                       <div class="card-body">
-                          <div class="h4">Bac Technique</div>
-                              <h4 class="category">Lycee Habib Borguiba Dahma</h4>
+                          <div class="h4">{{education?.title}}</div>
+                              <h4 class="category">{{education.university}}</h4>
+                              <h4 class="category">{{education.departement}}</h4>
+
                               <ul>
-                                      <li>Admis avec mention <b>13.24</b>.</li>
+                                      <li>{{education.mention}} </li>
                               </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="card">
-              <div class="row">
-                  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                      <div class="card-body cc-education-header">
-                          <p>2013-2014</p>
-                      <div class="h5">Diplome Licence Science Informatique</div>
-                      </div>
-                  </div>
-                  <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                      <div class="card-body">
-                          <div class="h4">Diplome (Department Science Informatique)</div>
-                          <h4 class="category">Faculté des science Tunis Manar</h4>
-                          <ul>
-                            <li>Admis  <b>10.11</b>.</li>                          </ul>
                       </div>
                   </div>
               </div>
           </div>
 
-          <div class="card">
-              <div class="row">
-                  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                      <div class="card-body cc-education-header">
-                          <p>2021-2022</p>
-                      <div class="h5">Ecole d'Ingénierie</div>
-                      </div>
-                  </div>
-                  <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                      <div class="card-body">
-                          <div class="h4">Tekup  School</div>
-                              <h4 class="category">Ingénierie Development web et mobile</h4>
-                              <ul>
-                                      <li>Admis 1ére année <b>11.25</b>.</li>
-                              </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+
   </div>
 </div>

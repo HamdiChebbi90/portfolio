@@ -4,44 +4,26 @@
       <div class="h4 text-center mb-4 title">My Projects</div>
 
       <div class="card">
-          <div class="row">
+          <div class="row"  *ngFor="let project of personne[0]?.project">
               <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                   <div class="card-body cc-education-header">
-                      <p>2022-2023</p>
-                  <div class="h5">Project</div>
+                      <p>{{project.date | date: 'dd/MM/yyyy'}}</p>
+                  <div class="h5"> {{project?.title}}</div>
                   </div>
               </div>
               <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                   <div class="card-body">
-                      <div class="h4">Project Title</div>
+                      <div class="h4">{{project?.title}}</div>
                           <h4 class="category">Project Description</h4>
                           <ul>
-                              <li>Project Description</li>
-                                  <li>Project Description</li>
-                                  <li>Project Description</li>
+                              <li>P{{project.description}}</li>
+                                  <li> {{project.link}}</li>
+
                           </ul>
                   </div>
               </div>
           </div>
 
-          <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                  <div class="card-body cc-education-header">
-                      <p>2022-2022</p>
-                  <div class="h5">Project</div>
-                  </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                  <div class="card-body">
-                      <div class="h4">Project Title</div>
-                          <h4 class="category">Project Description</h4>
-                          <ul>
-                              <li>Project Description</li>
-                                  <li>Project Description</li>
-                                  <li>Project Description</li>
-                          </ul>
-                  </div>
-              </div>
 
 
       </div>
