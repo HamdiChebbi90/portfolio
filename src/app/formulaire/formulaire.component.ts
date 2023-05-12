@@ -33,8 +33,8 @@ export class FormulaireComponent {
 console.log(form.vaue)
     form.value.experience = this.experiences;
     form.value.education = this.educations;
-    form.value.skills = this.skills;
-    form.value.projects = this.projects;
+    form.value.skill = this.skills;
+    form.value.project = this.projects;
 
     this.formPort.addFormulaire(form.value);
     form.reset();

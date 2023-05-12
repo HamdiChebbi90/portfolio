@@ -6,8 +6,9 @@
       <div class="card">
           <div class="row"  *ngFor="let project of personne[0]?.project">
               <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                  <div class="card-body cc-education-header">
-                      <p>{{project.date | date: 'dd/MM/yyyy'}}</p>
+                  <div class="card-body">
+                      <p  class="text-white-50">
+                        {{project.date | date: 'dd/MM/yyyy'}}</p>
                   <div class="h5"> {{project?.title}}</div>
                   </div>
               </div>
@@ -16,7 +17,7 @@
                       <div class="h4">{{project?.title}}</div>
                           <h4 class="category">Project Description</h4>
                           <ul>
-                              <li>P{{project.description}}</li>
+                              <li>{{project.description}}</li>
                                   <li> {{project.link}}</li>
 
                           </ul>

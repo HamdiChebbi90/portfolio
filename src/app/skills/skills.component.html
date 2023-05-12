@@ -1,21 +1,25 @@
-<!-- skills  -->
-<!-- Path: portfolio\src\app\skills\skills.component.html -->
-<div class="container">
-  <div class="h4 text-center mb-4 title">My Skills</div>
-  <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-    <div class="card-body">
-      <div class="row"  *ngFor="let skill of personne[0]?.skill">
-        <div class="col-md-6" >
-          <div class="progress-container progress-primary"><span class="progress-badge">{{  skill?.name }}</span>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                data-aos-duration="2000" role="progressbar" aria-valuenow=80 aria-valuemin="0" aria-valuemax="100"
-                style="width: 80%;"></div><span class="progress-value">{{  skill?.level }}</span>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
+<div class="section" id="skill">
+  <div class="container py-2 cc-skill">
+      <div class="h4 text-center mb-4 title">Skills</div>
+              <div class="row" *ngFor="let skill of personne[0]?.skill "   >
+                  <ul class="timeline">
+                      <li>
+                          <div class="timeline-badge up bg-green">
+                              <i class="fa fa-thumbs-up"></i>
+                          </div>
+                          <div class="timeline-panel">
+                              <div class="row">
+                                  <div class="col-lg-6 ">
+                                      <div class="h5 mt-0 title">{{skill?.name}}</div>
+                                      <div class="h6 mt-0 title">{{skill?.level}}</div>
+
+                                  </div>
+                                </div>
+                          </div>
+                      </li>
+
+                  </ul>
+              </div>
   </div>
 </div>
